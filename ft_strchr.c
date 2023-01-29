@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmorelli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 18:42:49 by lmorelli          #+#    #+#             */
-/*   Updated: 2023/01/21 17:49:13 by lmorelli         ###   ########.fr       */
+/*   Created: 2023/01/28 19:09:58 by lmorelli          #+#    #+#             */
+/*   Updated: 2023/01/28 19:12:46 by lmorelli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (i < ft_strlen(s) + 1)
 	{
-		if (s[i] == c)
-		{
+		if (*(s + i) == (char)c)
 			return ((char *)(s + i));
-		}
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)(s + i));
 	return (NULL);
 }
